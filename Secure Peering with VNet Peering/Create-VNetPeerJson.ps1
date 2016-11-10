@@ -2,8 +2,5 @@
 .\Login-AzureSubscription.ps1
 
 $RgName = (Get-AzureRmResourceGroup -Name "TheAzureGuy").ResourceGroupName
-New-AzureRmResourceGroupDeployment -Name "NewStorage" -TemplateFile .\ProvisionStorageAccount.json -ResourceGroupName $RgName `
-    -name "saeuntheazureguy" `
-    -accountType "Standard_LRS" `
-    -location "northeurope" `
-    -encryptionEnabled $false
+New-AzureRmResourceGroupDeployment -Name "VNetPeer1" -TemplateFile .\VNetPeer1.json -ResourceGroupName $RgName
+New-AzureRmResourceGroupDeployment -Name "VNetPeer2" -TemplateFile .\VNetPeer2.json -ResourceGroupName $RgName
